@@ -1,0 +1,29 @@
+version: '3.4'
+services:
+  mssql-server:
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "Docker2024"
+      MMSQL_PID: Express
+    ports:
+      - "1433:1433"
+    networks:
+      - dockersampleapi-network
+  dockersample-api:
+    build: .
+    environment:
+      DatabaseServer: "mssql-server"
+      DatabasePort: "1433"
+      DatabaseUser: "SA"
+      DatabasePassword: "Docker2024"
+      DatabaseName: "msgdb"
+      ASPNETCORE_URLS: "http://+:80"
+    ports:
+      - "8090:80"
+    networks:
+      - dockersampleapi-network
+
+networks:
+  dockersampleapi-network:
+    driver: bridge

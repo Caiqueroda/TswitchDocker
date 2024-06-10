@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "FGRYllPmYGHtoOI9YbqHJ84PP3BnSJ4FxOC4yZX2Zs4=",
+  "Source": "DockerSampleAPI",
+  "BasePath": "_content/DockerSampleAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
